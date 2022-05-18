@@ -1,20 +1,103 @@
 body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(120deg, rgba(114, 54, 174,0.9), rgba(25, 18, 227,0.9));
-    height: 100vh;
+    background: linear-gradient(40deg, #e36b77, #5873de); /*  #030529, #034d91 */
+    height: 92vh;
+    font-family: system-ui;
 }
 .form-box{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;
+    flex-direction: row;
     align-content: center;
+    background-color: white;
+    margin: 50px;
+    height: 85vh;
+    border-radius: 13px;
 }
 .align-center{
     display: flex;
     align-items: center;
     justify-content: center;
-    
+}
 
+#form-image{
+    margin-right: 130px;
+}
+
+#signinform{
+    margin-left: 80px;
+    margin-top: 40px;
+}
+
+#signinimg{
+    width:25vw;
+}
+
+#form-head{
+    margin-bottom: 40px;
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+form{
+    margin-bottom: 75px;
+}
+
+input{
+    background-color: rgb(232 232 232);
+    height: 20px;
+    width: 193px;
+    border-radius: 20px;
+    outline: none;
+    padding: 11px;
+    padding-left: 31px;
+    font-size: 15px;
+    border: 0.5px solid rgb(197 195 195);
+    margin-left: 20px;
+    margin-top: 11px;
+}
+
+#anime-email{
+    width: 18px;
+    position: relative;
+    left: -232px;
+}
+
+#anime-pass{
+    width: 23px;
+    position: relative;
+    left: -237px;
+    top: 5px;
+}
+
+#submit-btn{
+    width: 232px;
+    height: 46px;
+    font-size: 16px;
+    border-radius: 20px;
+    outline: none;
+    border: none;
+    background-color: rgb(88 184 71);
+    color: white;
+    margin-top: 30px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+#href-small{
+    text-decoration: none;
+    color: #8d8a8a;
+}
+
+#new-account{
+    padding-top: 25px;
+}
+
+#right-arrow-img{
+    width: 19px;
+    position: relative;
+    top: 1.5px;
+    left: 4px;
 }
