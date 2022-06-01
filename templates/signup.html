@@ -4,31 +4,79 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="signin.css">
-    <title>Sign Up</title>
+    <link rel="stylesheet" href="/static/css/signup.css">
+    <title>Sign In</title>
 </head>
 <body>
     <div class="form-box">
-        <div class="form-head">Sign Up</div>
-        <form action="index/" method="post">
-            <div class="form-div">
-                <label for="name" class="form-lbl">Name</label>
-                <input type="name" name="name" id="name" class="form-input">
-            </div>
-            <div class="form-div">
-                <label for="email" class="form-lbl">Email</label>
-                <input type="email" name="email" id="email" class="form-input">
-            </div>
-            <div class="form-div">
-                <label for="password" class="form-lbl">Password</label>
-                <input type="password" name="password" id="password" class="form-input">
-            </div>
-            <div class="form-div">
-                <label for="confirmpassword" class="form-lbl">Confirm New Password</label>
-                <input type="confirmpassword" name="confirmpassword" id="confirmpassword" class="form-input">
-            </div>
-            
-        </form>
+        <div id="form-image">
+            <img src="/static/images/decoration-img.jpg" alt="SignIn" id="signinimg">
+        </div>
+        <div id="signinform">
+            <div id="form-head" class="align-center">Member Sign Up</div>
+            <form action="/" method="post">
+                {% csrf_token %}
+                <div class="form-div">
+                    <input type="text" name="fname" id="fname" class="form-input" placeholder="Enter First Name">
+                    <label for="fname" class="form-lbl">
+                        <img src="/static/images/name.gif" alt="fname" class="anime-name">
+                    </label>
+                </div>
+                <div class="form-div">
+                    <input type="text" name="lname" id="lname" class="form-input" placeholder="Enter Last Name">
+                    <label for="lname" class="form-lbl">
+                        <img src="/static/images/name.gif" alt="lname" class="anime-name">
+                    </label>
+                </div>
+                <div class="form-div">
+                    <input type="email" name="email" id="email" class="form-input" placeholder="Email">
+                    <label for="email" class="form-lbl">
+                        <img src="/static/images/email.gif" alt="email" id="anime-email">
+                    </label>
+                </div>
+                <div class="form-div">
+                    <input type="password" name="password" id="mainpassword" class="form-input password" placeholder="Enter New Password">
+                    <label for="password" class="form-lbl">
+                        <img src="/static/images/password.gif" alt="password" id="anime-pass">
+                    </label>
+                    {% comment %} <img src="/static/images/eye-close.jpg" alt="show" class="align-center anime-passShow"> {% endcomment %}
+                    <video src="/static/images/show.mp4" class="anime-passShow align-center"></video>
+                </div>
+                <div class="form-div">
+                    <input type="password" name="conpassword" id="conpassword" class="form-input password" placeholder="Confirm New Password">
+                    <label for="password" class="form-lbl">
+                        <img src="/static/images/password.gif" alt="cpassword" id="anime-pass">
+                    </label>
+                    {% comment %} <img src="/static/images/eye-close.jpg" alt="show" class="align-center anime-passShow"> {% endcomment %}
+                    <video src="/static/images/show.mp4" class="anime-passShow align-center"></video>
+                </div>
+                <div class="form-div align-center">
+                    <fieldset class="checkbox-field">
+                        <select class="checkbox" id="role">
+                          <option value="None">Choose Role</option>
+                          {% for value, role in roles %}
+                          <option value="{{value}}">{{role}}</option>
+                          {% endfor %}
+                        </select>
+                    </fieldset>
+                </div>
+                <div class="form-div" id="teamcode-div">
+                    <input type="text" name="teamcode" id="teamcode" class="form-input" placeholder="Enter Team Code">
+                    <label for="teamcode" class="form-lbl">
+                        <img src="/static/images/team.gif" alt="teamcode" id="anime-teamcode">
+                    </label>
+                </div>
+                <div class="form-submit align-center">
+                    <button type="submit" id="submit-btn">Sign Up</button>
+                </div>
+                <span class="align-center" id="signin">
+                    <a href="/" id="href-small">
+                        <small>Already Registered?<b> Login <img src="/static/images/right-arrow.gif" alt="->" id="right-arrow-img"></b></small>
+                    </a>
+                </span>
+            </form>
+        </div>
     </div>
+    <script src="/static/js/signup.js"></script>
 </body>
 </html>

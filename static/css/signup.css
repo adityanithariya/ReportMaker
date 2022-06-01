@@ -1,13 +1,11 @@
-body {
+body{
     margin: 0;
     padding: 0;
-    background: linear-gradient(40deg, #030529, #034d91);
-    /*  #e36b77, #5873de  */
-    height: 93vh;
+    background: linear-gradient(40deg, #030529, #034d91); /* #e36b77, #5873de);*/ /*   */
+    height: 98vh;
     font-family: system-ui;
 }
-
-.form-box {
+.form-box{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,40 +13,40 @@ body {
     align-content: center;
     background-color: white;
     margin: 50px;
-    height: 85vh;
+    height: 90vh;
     border-radius: 13px;
 }
-
-.align-center {
+.align-center{
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#form-image {
+#form-image{
     margin-right: 130px;
 }
 
-#signinform {
-    margin-left: 80px;
+#signinform{
+    margin-left: 110px;
     margin-top: 40px;
 }
 
-#signinimg {
-    width: 25vw;
+#signinimg{
+    width:25vw;
 }
 
-#form-head {
-    margin-bottom: 40px;
+#form-head{
+    margin-bottom: 12px;
     font-size: 23px;
     margin-top: 20px;
+    margin-right: 27px;
 }
 
-form {
+form{
     margin-bottom: 75px;
 }
 
-input {
+input{
     background-color: rgb(232 232 232);
     height: 20px;
     width: 193px;
@@ -58,8 +56,13 @@ input {
     padding-left: 31px;
     font-size: 15px;
     border: 0.5px solid rgb(197 195 195);
-    margin-left: 44px;
+    margin-left: 20px;
     margin-top: 11px;
+}
+
+.password{
+    padding-right: 31px;
+    width: 173px;
 }
 
 .anime-passShow{
@@ -70,21 +73,65 @@ input {
     display: inline-block;
 }
 
-#anime-email {
+.anime-name{
+    width: 18px;
+    position: relative;
+    left: -232px;
+    top: 3px;
+}
+
+#anime-email{
     width: 18px;
     position: relative;
     left: -232px;
 }
 
-#anime-pass {
+#anime-pass{
     width: 23px;
     position: relative;
     left: -237px;
     top: 5px;
 }
 
-#submit-btn {
-    width: 232px;
+#anime-teamcode{
+    width: 21px;
+    position: relative;
+    left: -234px;
+    top: 3px;
+}
+
+.checkbox-field{
+    border-width: 0px;
+}
+
+.checkbox{
+    height: 46px;
+    width: 236px;
+    border-radius: 20px 20px 0px 0px;
+    position: relative;
+    left: -3px;
+    text-align: center;
+    font-size: 17px;
+    margin-top: 5px;
+    border: 0.5px solid rgb(197 195 195);
+    background-color: rgb(232 232 232);
+    outline: none;
+    margin-right: 23px;
+}
+
+#teamcode-div{
+    display: none;
+}
+
+#teamcode{
+    margin-top: 0;
+    border-radius: 0px 0px 20px 20px;
+    background-color: white;
+}
+
+
+#submit-btn{
+    width: 237px;
     height: 46px;
     font-size: 16px;
     border-radius: 20px;
@@ -95,18 +142,26 @@ input {
     margin-top: 30px;
     cursor: pointer;
     letter-spacing: 1px;
+    position: relative;
+    left: -4px;
+    margin-right: 22px;
 }
 
-#href-small {
+#href-small{
     text-decoration: none;
     color: #8d8a8a;
 }
 
-#new-account {
+#new-account{
     padding-top: 25px;
 }
 
-#right-arrow-img {
+#signin{
+    padding-top: 0px;
+    margin-right: 22px;
+}
+
+#right-arrow-img{
     width: 19px;
     position: relative;
     top: 1.5px;

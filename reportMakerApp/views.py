@@ -5,4 +5,13 @@ def index(req):
     return render(req, 'signin.html')
     
 def signup(req):
-    return render(req, 'signup.html')
+    context = {
+        'roles':[
+            ['leader', 'Team Leader'],
+            ['member', 'Team Member']
+        ]
+    }
+    return render(req, 'signup.html', context)
+    
+def test(req):
+    return render(req, 'test.html')
