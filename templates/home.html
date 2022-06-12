@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <title>Automated Reporter</title>
+</head>
+<body>
+    <nav>
+        <span id="nav-expander-span">
+            <span id="nav-static" class="align-center">
+                <a href="/srijan" id="logo">
+                    <img src="/static/logo.jpg" alt="Logo" class="align-center" id="logo-img">
+                </a>
+                <div id="nav-center-div">
+                    <div class="align-center" id="menu">
+                        <img class="align-center nav-img" src="/static/images/home/menu.png" alt="">
+                    </div>
+                    <div class="align-center" id="home">
+                        <span class="nav-side-bar"></span>
+                        <video class="align-center nav-img" id="home-vid" autoplay="true" muted="muted" src="/static/images/home/home.mp4"></video>
+                    </div>
+                    <a href="/reports" class="align-center">
+                        <img class="align-center nav-img" src="/static/images/home/report.png" alt="">
+                    </a>
+                    <a href="/settings" class="align-center">
+                        <img class="align-center nav-img" src="/static/images/home/settings.png" alt="">
+                    </a>
+                </div>
+                <a href="/profile" class="align-center" id="profile-anchor">
+                    <img class="align-center" id="profile-img" src="/static/images/home/user.jpg" alt="">
+                </a>
+            </span>
+            <span id="nav-open-menu">
+                <a href="/srijan" id="logo-txt">Srijan</a>
+                <div id="nav-center-txt-div">
+                    <div class="nav-txts align-center" id="menu-txt">Menu</div>
+                    <div class="nav-txts align-center" id="home-txt">Home</div>
+                    <a href="/reports" class="nav-txts align-center" id="reports-txt">Reports</a>
+                    <a href="/settings" class="nav-txts align-center" id="settings-txt">Settings</a>
+                </div>
+                <a href="/profile" id="profile-txt">Profile</a>
+            </span>
+        </span>
+        <span id="nav-cover"></span>
+    </nav>
+    <section>
+        <img id="clogo" src="/static/images/home/clogo.svg" alt="CLogo">
+        <h1 id="teamname">{{teamName}}</h1>
+        <div id="search-div">
+            <label for="search-input" id="search-lbl">
+                <video id="search-vid" src="/static/images/home/search.mp4" alt="Search"></video>
+            </label>
+            <input type="text" placeholder="Search Here" id="search-input">
+            <div id="search-baseline"></div>
+        </div>
+        <div id="notif-div">
+            <video id="notif-vid" muted="muted" src="/static/images/home/notif.mp4"></video>
+        </div>
+        <div id="cards">
+            <a href="/" class="design-container">
+                <span class="side-bar"></span>
+                <div class="designations">{{designation}}</div>
+                <div class="last-report">{{lastReportTime}}</div>
+                <div class="ongoing-work">{{ongoingWork}}</div>
+            </a>
+        </div>
+    </section>
+    <aside>
+        <h2 class="align-center">Recent Reports</h2>
+        <div class="report-div">
+            <div class="report-upper-div">
+                <span class="report-bullet"></span>
+                <span class="report-title">Report Title</span>
+                <span class="report-time-more align-center">
+                    <span class="report-time">09:25</span>
+                    <span class="report-more">⋮</span>
+                </span>
+            </div>
+            <div class="align-center report-lower-div">
+                <span class="report-name">{{reporterName}}</span>
+                <span class="report-design">{{reporterDesign}}</span>
+            </div>
+        </div>
+    </aside>
+    <script src="/static/js/home.js"></script>
+</body>
+</html>

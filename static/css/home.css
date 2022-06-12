@@ -1,0 +1,348 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ecefff;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.align-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+}
+
+#nav-expander-span{
+    height: 100vh;
+    background-color: white;
+    border-radius: 0px 40px 40px 0px;
+    /* width: 180px; */
+    width: 75px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    transition: width .5s;
+}
+
+#nav-static{
+    width: 75px;
+    height: 100vh;
+    justify-content: space-between !important;
+    flex-direction: column;
+}
+
+#nav-center-div{
+    width: 100%;
+}
+
+#logo{
+    margin-top: 20px;
+    height: 60px;
+    width: 100%;
+}
+
+.nav-img{
+    width: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.nav-side-bar{
+    width: 6px;
+    height: 70px;
+    background-color: #9dadff;
+    display: inline-block;
+    position: fixed;
+    border-radius: 10px 0px 0px 10px;
+    left: 68.5px;
+    /* left: 173.5px; */
+    transition: left .5s;
+}
+
+#menu{
+    cursor: pointer;
+}
+
+#home{
+    background-color: #ecefff;
+}
+
+#profile-anchor{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+}
+
+#profile-img{
+    width: 50px;
+}
+
+#nav-open-menu{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 104px;
+    font-size: 24px;
+    transition: display .5s;
+}
+
+#logo-txt{
+    margin-top: 20px;
+    height: 50px;
+    color: black;
+    text-decoration: none;
+}
+
+#nav-center-txt-div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 29px;
+}
+
+.nav-txts{
+    width: 104px;
+    height: 70px;
+    justify-content: flex-start;
+    color: black;
+    text-decoration: none;
+}
+
+#menu-txt{
+    cursor: pointer;
+}
+
+#home-txt{
+    background-color: #ecefff;
+}
+
+#settings-txt{
+    padding-bottom: 18px;
+}
+
+#profile-txt{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+}
+
+#nav-cover{
+    z-index: 1;
+    width: 0%;
+    height: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    background-color: rgb(236 239 255 / 40%);
+    transition: backdrop-filter 1s, background-color 1s;
+}
+
+section{
+    width: 65vw;
+    margin-left: 110px;
+    margin-right: 320px;
+}
+
+#clogo{
+    width: 57px;
+    position: relative;
+    top: 15px;
+    margin-left: 14px;
+    border-radius: 50%;
+}
+
+#teamname{
+    font-size: 40px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+#search-div{
+    display: inline-block;
+    position: relative;
+    left: 190px;
+    top: -10px;
+}
+
+#search-lbl{
+    cursor: text;
+}
+
+#search-vid{
+    width: 33px;
+    position: relative;
+    top: 11px;
+}
+
+#search-input{
+    border: none;
+    outline: none;
+    background-color: transparent;
+    width: 230px;
+    height: 35px;
+    font-size: 15px;
+    margin-left: 5px;
+    position: relative;
+    top: -1px;
+}
+
+#search-input:focus + #search-lbl{
+    width: 10px;
+}
+
+#search-baseline{
+    height: 1px;
+    background-color: #c0bebe;
+    width: 280px;
+    position: relative;
+    left: -3px;
+}
+
+#notif-div{
+    display: inline-block;
+    position: relative;
+    left: 195px;
+    cursor: pointer;
+}
+
+#notif-vid{
+    width: 33px;
+}
+
+#cards{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 15px;
+}
+
+.design-container{
+    width: 230px;
+    background-color: white;
+    height: 190px;
+    border-radius: 40px;
+    text-decoration: none;
+    color: black !important;
+    margin: auto;
+    align-self: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.design-container > div{
+    width: 88%;
+}
+
+.design-a{
+    color: black;
+    text-decoration: none;
+}
+
+.design-container:hover{
+    box-shadow: 0 0 5px 0px grey;
+}
+
+.side-bar{
+    width: 12px;
+    height: 40px;
+    background-color: rgb(255 0 0 / 60%);
+    display: inline-block;
+    position: relative;
+    top: 33px;
+    border-radius: 0px 10px 10px 0px;
+}
+
+.design-container:hover > .side-bar{
+    background-color: red;
+}
+
+.designations{
+    position: relative;
+    left: 27px;
+    top: -15px;
+    font-weight: 1000;
+    font-size: 18px;
+}
+
+.last-report{
+    position: relative;
+    left: 27px;
+    top: -15px;
+    font-size: 12px;
+}
+
+.ongoing-work{
+    position: relative;
+    left: 27px;
+}
+
+aside{
+    height: 96vh;
+    background-color: white;
+    border-radius: 40px 0px 0px 40px;
+    width: 300px;
+    position: fixed;
+    top: 2vh;
+    right: 0;
+}
+
+.report-upper-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+}
+
+.report-bullet{
+    width: 10px;
+    border-radius: 10px;
+    height: 10px;
+    background-color: red;
+    display: inline-block;
+    margin-left: 20px;
+    margin-right: 12px;
+}
+
+.report-time-more{
+    position: relative;
+    left: 100px;
+}
+
+.report-time{
+    font-size: 11px;
+    margin-right: 5px;
+}
+
+.report-more{
+    margin-bottom: 2px;
+}
+
+.report-lower-div{
+    justify-content: space-between !important;
+}
+
+.report-name{
+    margin-left: 43px;
+}
+
+.report-design{
+    margin-right: 49px;
+    font-size: 11px;
+    margin-top: 3px;
+}

@@ -21,12 +21,12 @@ for (let index = 0; index < inputPasswords.length; index++) {
         if (password.type == "password") {
             togglePasswordVids[index].play();
             password.type = "text";
-            setTimeout(changeSrc, 1000, togglePasswordVids[index], "/static/images/hide.mp4");
+            setTimeout(changeSrc, 1000, togglePasswordVids[index], "/static/images/sign/hide.mp4");
         } 
         else {
             togglePasswordVids[index].play();
             password.type = "password";
-            setTimeout(changeSrc, 1000, togglePasswordVids[index], "/static/images/show.mp4");
+            setTimeout(changeSrc, 1000, togglePasswordVids[index], "/static/images/sign/show.mp4");
         }
     };
 }

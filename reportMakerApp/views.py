@@ -15,3 +15,15 @@ def signup(req):
     
 def test(req):
     return render(req, 'test.html')
+
+def home(req):
+    context = {
+
+        "teamName": "TeamName",
+        "reporterName": "User Name",
+        "reporterDesign":"Project Manager",
+        "designation": "Graphic Designer",
+        "lastReportTime": "1 hour ago",
+        "ongoingWork": "Reports Page Design"
+    }
+    return render(req, "home.html", context)
