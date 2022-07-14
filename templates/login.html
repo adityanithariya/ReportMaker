@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/css/signin.css">
-    <title>Sign In</title>
+    <title>Log In - Report Maker</title>
 </head>
 <body>
     <div class="form-box">
@@ -14,8 +14,19 @@
         </div>
         <div id="signinform">
             <div id="form-head" class="align-center">Member Login</div>
-            <form action="/" method="post">
+            <form action="/login/" method="post">
                 {% csrf_token %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="form-div align-center message-box {{message.tags}}">
+                            <span class="message-div">
+                                {{ message }}
+                            </span>
+                            <span class="close">✕</span>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                
                 <div class="form-div">
                     <input type="email" name="email" id="email" class="form-input" placeholder="Email">
                     <label for="email" class="form-lbl">
@@ -33,12 +44,12 @@
                     <button type="submit" id="submit-btn">Login</button>
                 </div>
                 <span class="align-center">
-                    <a href="/forgot-pass" id="href-small">
+                    <a href="/forgotPass/" id="href-small">
                         <small>Forgot <strong>Password?</strong></small>
                     </a>
                 </span>
                 <span class="align-center" id="new-account">
-                    <a href="/signUp" id="href-small">
+                    <a href="/signup/" id="href-small">
                         <small><b>Create New Account <img src="/static/images/sign/right-arrow.gif" alt="->" id="right-arrow-img"></b></small>
                     </a>
                 </span>

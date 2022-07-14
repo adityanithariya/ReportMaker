@@ -11,66 +11,94 @@
     <title>Automated Reporter</title>
 </head>
 <body>
-    <nav>
-        <span id="nav-expander-span">
-            <span id="nav-static" class="align-center">
-                <a href="/srijan" id="logo">
-                    <img src="/static/logo.jpg" alt="Logo" class="align-center" id="logo-img">
-                </a>
-                <div id="nav-center-div">
-                    <div class="align-center" id="menu">
-                        <img class="align-center nav-img" src="/static/images/home/menu.png" alt="">
-                    </div>
-                    <div class="align-center" id="home">
-                        <span class="nav-side-bar"></span>
-                        <video class="align-center nav-img" id="home-vid" autoplay="true" muted="muted" src="/static/images/home/home.mp4"></video>
-                    </div>
-                    <a href="/reports" class="align-center">
-                        <img class="align-center nav-img" src="/static/images/home/report.png" alt="">
+    <header>
+        <nav>
+            <span id="nav-expander-span">
+                <span id="nav-static" class="align-center">
+                    <a href="/srijan" id="logo">
+                        <img src="/static/images/home/logo.png" alt="Logo" class="align-center" id="logo-img">
                     </a>
-                    <a href="/settings" class="align-center">
-                        <img class="align-center nav-img" src="/static/images/home/settings.png" alt="">
-                    </a>
-                </div>
-                <a href="/profile" class="align-center" id="profile-anchor">
-                    <img class="align-center" id="profile-img" src="/static/images/home/user.jpg" alt="">
+                    <div id="nav-center-div">
+                        <div class="align-center" id="menu">
+                            <img class="align-center nav-img" src="/static/images/home/menu.png" alt="">
+                        </div>
+                        <div class="align-center" id="home">
+                            <span class="nav-side-bar"></span>
+                            <video class="align-center nav-img" id="home-vid" autoplay="true" muted="muted" src="/static/images/home/home.mp4"></video>
+                        </div>
+                        <a href="/reports" class="align-center">
+                            <img class="align-center nav-img" src="/static/images/home/report.png" alt="">
+                        </a>
+                        <a href="/settings" class="align-center">
+                            <img class="align-center nav-img" src="/static/images/home/settings.png" alt="">
+                        </a>
+                    </div>
+                    <button class="align-center profile-btn">
+                        <div class="align-center" id="profile-btn-div">
+                            <img class="align-center" id="profile-img" src="/static/images/home/user.jpg" alt="">
+                            <img class="dropdown-caret" id="profile-downarrow" src="/static/images/home/dropdown-caret.png" alt="↓">
+                        </div>
+                        <div id="dd-profile-menu" class="align-center" style="display: none;">
+                            <a href="/profile" id="profile-anchor">Signed In as <strong>{{request.user}}</strong></a>
+                            <a href="/logout" id="logout">Logout</a>
+                        </div>
+                        <span id="ddmenu-cover" style="width: 0px; height: 0px;"></span>
+                    </button>
+                </span>
+                <span id="nav-open-menu">
+                    <a href="/srijan" id="logo-txt" class="align-center">Srijan</a>
+                    <div id="nav-center-txt-div">
+                        <div class="nav-txts align-center" id="menu-txt">Menu</div>
+                        <div class="nav-txts align-center" id="home-txt">Home</div>
+                        <a href="/reports" class="nav-txts align-center" id="reports-txt">Reports</a>
+                        <a href="/settings" class="nav-txts align-center" id="settings-txt">Settings</a>
+                    </div>
+                    <span id="profile-txt">Profile</span>
+                </span>
+            </span>
+            <span id="nav-cover"></span>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="notif-bar" style="display:{{notifDisplay}}">
+                <span id="notif-bar-text" class="align-center">
+                    {% if messages %}
+                        {% for message in messages %}
+                            {{message}}
+                        {% endfor %}
+                    {% endif %}
+                </span>
+                <span id="close" class="align-center">✕</span>
+            </div>
+            <div id="header-div" class="align-center">
+                <span id="left-head" class="align-center">
+                    <img id="clogo" src="/static/images/home/clogo.svg" alt="CLogo">
+                    <h1 id="teamname">{{teamName}}</h1>
+                </span>
+                <span id="right-head" class="align-center">
+                    <div id="search-div">
+                        <label for="search-input" id="search-lbl">
+                            <video id="search-vid" src="/static/images/home/search.mp4" alt="Search"></video>
+                        </label>
+                        <input type="text" placeholder="Search Here" id="search-input">
+                        <div id="search-baseline"></div>
+                    </div>
+                    <div id="notif-div">
+                        <video id="notif-vid" muted="muted" src="/static/images/home/notif.mp4"></video>
+                    </div>
+                </span>
+            </div>
+            <div id="cards">
+                <a href="/" class="design-container">
+                    <span class="side-bar"></span>
+                    <div class="designations">{{designation}}</div>
+                    <div class="last-report">{{lastReportTime}}</div>
+                    <div class="ongoing-work">{{ongoingWork}}</div>
                 </a>
-            </span>
-            <span id="nav-open-menu">
-                <a href="/srijan" id="logo-txt">Srijan</a>
-                <div id="nav-center-txt-div">
-                    <div class="nav-txts align-center" id="menu-txt">Menu</div>
-                    <div class="nav-txts align-center" id="home-txt">Home</div>
-                    <a href="/reports" class="nav-txts align-center" id="reports-txt">Reports</a>
-                    <a href="/settings" class="nav-txts align-center" id="settings-txt">Settings</a>
-                </div>
-                <a href="/profile" id="profile-txt">Profile</a>
-            </span>
-        </span>
-        <span id="nav-cover"></span>
-    </nav>
-    <section>
-        <img id="clogo" src="/static/images/home/clogo.svg" alt="CLogo">
-        <h1 id="teamname">{{teamName}}</h1>
-        <div id="search-div">
-            <label for="search-input" id="search-lbl">
-                <video id="search-vid" src="/static/images/home/search.mp4" alt="Search"></video>
-            </label>
-            <input type="text" placeholder="Search Here" id="search-input">
-            <div id="search-baseline"></div>
-        </div>
-        <div id="notif-div">
-            <video id="notif-vid" muted="muted" src="/static/images/home/notif.mp4"></video>
-        </div>
-        <div id="cards">
-            <a href="/" class="design-container">
-                <span class="side-bar"></span>
-                <div class="designations">{{designation}}</div>
-                <div class="last-report">{{lastReportTime}}</div>
-                <div class="ongoing-work">{{ongoingWork}}</div>
-            </a>
-        </div>
-    </section>
+            </div>
+        </section>
+    </main>
     <aside>
         <h2 class="align-center">Recent Reports</h2>
         <div class="report-div">

@@ -14,7 +14,7 @@
         </div>
         <div id="signinform">
             <div id="form-head" class="align-center">Member Sign Up</div>
-            <form action="/" method="post">
+            <form action="/signup/" method="post">
                 {% csrf_token %}
                 <div class="form-div">
                     <input type="text" name="fname" id="fname" class="form-input" placeholder="Enter First Name">
@@ -51,7 +51,7 @@
                     <video src="/static/images/sign/show.mp4" class="anime-passShow align-center"></video>
                 </div>
                 <div class="form-div align-center">
-                    <fieldset class="checkbox-field">
+                    <fieldset class="checkbox-field" name="role">
                         <select class="checkbox" id="role">
                           <option value="None">Choose Role</option>
                           {% for value, role in roles %}
@@ -60,17 +60,17 @@
                         </select>
                     </fieldset>
                 </div>
-                <div class="form-div" id="teamcode-div">
-                    <input type="text" name="teamcode" id="teamcode" class="form-input" placeholder="Enter Registration Code">
-                    <label for="teamcode" class="form-lbl">
-                        <img src="/static/images/sign/team.gif" alt="teamcode" id="anime-teamcode">
+                <div class="form-div" id="team-div">
+                    <input type="text" name="team" id="team" class="form-input" placeholder="Enter Designation Code">
+                    <label for="team" class="form-lbl">
+                        <img src="/static/images/sign/team.gif" alt="Team Details" id="anime-team">
                     </label>
                 </div>
                 <div class="form-submit align-center">
                     <button type="submit" id="submit-btn">Sign Up</button>
                 </div>
                 <span class="align-center" id="signin">
-                    <a href="/" id="href-small">
+                    <a href="/login" id="href-small">
                         <small>Already Registered?<b> Login <img src="/static/images/sign/right-arrow.gif" alt="->" id="right-arrow-img"></b></small>
                     </a>
                 </span>

@@ -1,13 +1,16 @@
-teamcodediv = document.getElementById("teamcode-div");
+teamdiv = document.getElementById("team-div");
 inputPasswords = document.getElementsByClassName("password");
 togglePasswordVids = document.getElementsByClassName("anime-passShow")
 
-role.onchange = function (event) {
-    if(event.target.value == "member"){
-        teamcodediv.style.display = "block";
-    }
-    else{
-        teamcodediv.style.display = "none";
+role.onchange = function(event) {
+    if (event.target.value == "member") {
+        teamdiv.style.display = "block";
+        document.getElementById("team").placeholder = "Enter Designation Code";
+    } else if (event.target.value == "leader") {
+        teamdiv.style.display = "block";
+        document.getElementById("team").placeholder = "Enter Company Name";
+    } else {
+        teamdiv.style.display = "none";
     }
 };
 
@@ -16,14 +19,13 @@ function changeSrc(video, src) {
 }
 
 for (let index = 0; index < inputPasswords.length; index++) {
-    togglePasswordVids[index].onclick = function (event) {
+    togglePasswordVids[index].onclick = function(event) {
         password = inputPasswords[index];
         if (password.type == "password") {
             togglePasswordVids[index].play();
             password.type = "text";
             setTimeout(changeSrc, 1000, togglePasswordVids[index], "/static/images/sign/hide.mp4");
-        } 
-        else {
+        } else {
             togglePasswordVids[index].play();
             password.type = "password";
             setTimeout(changeSrc, 1000, togglePasswordVids[index], "/static/images/sign/show.mp4");

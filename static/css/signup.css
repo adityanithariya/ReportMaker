@@ -1,11 +1,14 @@
-body{
+body {
     margin: 0;
     padding: 0;
-    background: linear-gradient(40deg, #030529, #034d91); /* #e36b77, #5873de);*/ /*   */
+    background: linear-gradient(40deg, #030529, #034d91);
+    /* #e36b77, #5873de);*/
+    /*   */
     height: 98vh;
     font-family: system-ui;
 }
-.form-box{
+
+.form-box {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -16,37 +19,38 @@ body{
     height: 90vh;
     border-radius: 13px;
 }
-.align-center{
+
+.align-center {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#form-image{
+#form-image {
     margin-right: 130px;
 }
 
-#signinform{
+#signinform {
     margin-left: 110px;
     margin-top: 40px;
 }
 
-#signinimg{
-    width:25vw;
+#signinimg {
+    width: 25vw;
 }
 
-#form-head{
+#form-head {
     margin-bottom: 12px;
     font-size: 23px;
     margin-top: 20px;
     margin-right: 27px;
 }
 
-form{
+form {
     margin-bottom: 75px;
 }
 
-input{
+input {
     background-color: rgb(232 232 232);
     height: 20px;
     width: 193px;
@@ -60,12 +64,12 @@ input{
     margin-top: 11px;
 }
 
-.password{
+.password {
     padding-right: 31px;
     width: 173px;
 }
 
-.anime-passShow{
+.anime-passShow {
     width: 18px;
     position: relative;
     left: -59px;
@@ -73,38 +77,38 @@ input{
     display: inline-block;
 }
 
-.anime-name{
+.anime-name {
     width: 18px;
     position: relative;
     left: -232px;
     top: 3px;
 }
 
-#anime-email{
+#anime-email {
     width: 18px;
     position: relative;
     left: -232px;
 }
 
-#anime-pass{
+#anime-pass {
     width: 23px;
     position: relative;
     left: -237px;
     top: 5px;
 }
 
-#anime-teamcode{
+#anime-team {
     width: 21px;
     position: relative;
     left: -234px;
     top: 3px;
 }
 
-.checkbox-field{
+.checkbox-field {
     border-width: 0px;
 }
 
-.checkbox{
+.checkbox {
     height: 46px;
     width: 236px;
     border-radius: 20px 20px 0px 0px;
@@ -119,18 +123,17 @@ input{
     margin-right: 23px;
 }
 
-#teamcode-div{
+#team-div {
     display: none;
 }
 
-#teamcode{
+#team {
     margin-top: 0;
     border-radius: 0px 0px 20px 20px;
     background-color: white;
 }
 
-
-#submit-btn{
+#submit-btn {
     width: 237px;
     height: 46px;
     font-size: 16px;
@@ -147,21 +150,21 @@ input{
     margin-right: 22px;
 }
 
-#href-small{
+#href-small {
     text-decoration: none;
     color: #8d8a8a;
 }
 
-#new-account{
+#new-account {
     padding-top: 25px;
 }
 
-#signin{
+#signin {
     padding-top: 0px;
     margin-right: 22px;
 }
 
-#right-arrow-img{
+#right-arrow-img {
     width: 19px;
     position: relative;
     top: 1.5px;
