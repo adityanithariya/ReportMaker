@@ -1,0 +1,344 @@
+:root{
+    --side-bar-left: 68.5px;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #ecefff;
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+#nav-expander-span{
+    height: 100vh;
+    background-color: white;
+    border-radius: 0px 40px 40px 0px;
+    /* width: 180px; */
+    width: 75px;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    transition: width .3s;
+}
+
+#nav-static{
+    width: 75px;
+    height: 100vh;
+    justify-content: space-between !important;
+    flex-direction: column;
+}
+
+#nav-center-div{
+    width: 100%;
+}
+
+#logo{
+    margin-top: 12px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px 35% 0px 0px;
+}
+
+#logo-img{
+    width: 45px;
+    border-radius: 50%;
+    margin: 0;
+}
+
+.nav-img{
+    width: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#menu{
+    cursor: pointer;
+}
+
+.nav-on{
+    background-color: #ecefff;
+    color: var(--side-bar-left);
+}
+
+.nav-on::after{
+    content: "";
+    width: 6px;
+    height: 70px;
+    background-color: #9dadff;
+    display: inline-block;
+    position: fixed;
+    border-radius: 10px 0px 0px 10px;
+    left: var(--side-bar-left);
+    /* left: 173.5px; */
+    transition: left .3s;
+}
+
+.profile-btn{
+    width: 100%;
+    height: 60px;
+    margin-bottom: 20px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 50%;
+    font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 24px;
+}
+
+#profile-btn-div{
+    z-index: 2;
+}
+
+#profile-btn-div:hover{
+    opacity: .8;
+}
+
+#dd-profile-menu{
+    position: fixed;
+    left: 65px;
+    background-color: white;
+    flex-direction: column;
+    border: 1px solid #9babff;
+    border-radius: 5px;
+    height: 80px;
+    width: 150px;
+    margin-bottom: 60px;
+    z-index: 2;
+    display: none;
+}
+
+#profile-anchor{
+    text-align: left;
+    padding: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid #9babff;
+    text-decoration: none;
+    color: black;
+    font-size: 12px;
+    box-sizing: border-box;
+    height: 45px;
+    width: 100%;
+}
+
+#logout{
+    padding: 12px;
+    width: 84.1%;
+    font-size: 15px;
+    padding-top: 8px;
+    text-decoration: none;
+    color: black;
+    border-radius: 0px 0px 5px 5px;
+    padding-bottom: 9.8px;
+    margin-bottom: 2.2px;
+}
+
+#logout:hover{
+    background-color: #3e87f7;
+    color: #ededed;
+}
+
+#ddmenu-cover{
+    width: 0;
+    height: 0;
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    cursor: default;
+}
+
+#profile-img{
+    width: 45px;
+    border-radius: 50%;
+}
+
+.dropdown-caret{
+    width: 15px;
+}
+
+#profile-downarrow{
+    position: relative;
+    left: -7px;
+    transform: rotate(270deg);
+    transition: left .3s, top 1s;
+}
+
+#nav-open-menu{
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 104px;
+    font-size: 24px;
+    transition: display .3s;
+}
+
+#logo-txt{
+    margin-top: 12px;
+    height: 50px;
+    color: black;
+    text-decoration: none;
+    width: 100%;
+    justify-content: flex-start;
+    border-radius: 0 35% 0 0;
+}
+
+#nav-center-txt-div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-top: 17px;
+}
+
+.nav-txts{
+    width: 104px;
+    height: 70px;
+    justify-content: flex-start;
+    color: black;
+    text-decoration: none;
+    user-select: none;
+}
+
+.nav-txts-on{
+    background-color: #ecefff;
+}
+
+#menu-txt{
+    cursor: pointer;
+}
+
+
+#settings-txt{
+    padding-bottom: 18px;
+}
+
+#profile-txt{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    color: black;
+    text-decoration: none;
+    padding: 0;
+    z-index: 2;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#nav-cover{
+    z-index: 1;
+    width: 0%;
+    height: 0%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(3px);
+    background-color: rgb(236 239 255 / 40%);
+    transition: backdrop-filter 1s, background-color 1s;
+}
+
+/* Navigation Bar Media Queries for Mobile */
+@media only screen and (max-width: 600px) {
+    :root{
+        --side-bar-left:54px;
+    }
+    #nav-expander-span{
+        height: 91.75vh;
+        width: 60px;
+    }
+    #nav-static{
+        width: 60px;
+        height: 92vh;
+    }
+    #logo-img{
+        width: 40px;
+    }
+    .nav-img{
+        width: 35px;
+    }
+    #profile-img{
+        width: 40px;
+    }
+    .nav-on::after{
+        height: 65px;
+    }
+    #nav-open-menu{
+        font-size: 20px;
+    }
+    #nav-center-txt-div{
+        margin-top: 18px;
+    }
+    .nav-txts{
+        width: 90px;
+        height: 65px;
+    }
+    .profile-btn{
+        font-size: 20px;
+    }
+    #profile-txt{
+        position: relative;
+        top: 2px;
+    }
+    #dd-profile-menu{
+        left: 50px;
+    }
+    #home-txt-span{
+        position: relative;
+        top: 5px;
+    }
+}
+
+
+aside{
+    height: 96vh;
+    background-color: white;
+    border-radius: 40px 0px 0px 40px;
+    width: 300px;
+    position: fixed;
+    top: 2vh;
+    right: 0;
+    overflow-x: hidden;
+}
+
+.report-div{
+    flex-direction: column;
+    margin: 15px;
+}
+
+.report-header{
+    width: 100%;
+    justify-content: space-between !important;
+}
+
+.report-bullet{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.report-time{
+    font-size: 13px;
+}
+
+.report-base{
+    justify-content: space-between !important;
+    width: 94%;
+    padding-left: 5%;
+}
+
+.reporter-design{
+    font-size: 13px;
+}

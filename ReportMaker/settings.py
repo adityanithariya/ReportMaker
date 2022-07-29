@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-+&vuu($2gctdf7=x6ozw6n!455_8jqlydcfmxb7dl&4e9t(#-m
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
+
 ALLOWED_HOSTS = []
 
 
@@ -39,7 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'reportMakerApp'
+    'reportMakerApp',
 ]
 
 MIDDLEWARE = [

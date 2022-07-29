@@ -1,15 +1,21 @@
 from django.shortcuts import redirect
 from django.urls import path
-from . import views
+from .views import *
 
 urlpatterns = [
-    path('login/', views.logIn, name='login'),
-    path('logout/', views.logOut, name='logout'),
-    path('signup/', views.signUp, name='signup'),
-    path('test/', views.test, name='test'),
-    path('home/', views.home, name='home'),
-    path('login', lambda req:redirect('login')),
-    path('signup', lambda req:redirect('signup')),
-    path('test', lambda req:redirect('test')),
-    path('home', lambda req:redirect('home')),
+    path('login/', logIn, name='login'),
+    path('logout/', logOut, name='logout'),
+    path('signup/', signUp, name='signup'),
+    path('test/', test, name='test'),
+    path('home/', home, name='home'),
+    path('srijan/', srijan, name='srijan'),
+    path('reports/', reports, name='reports'),
+    path('settings/', settings, name='settings'),
+    path('profile/', profile, name='profile'),
+    path('forgotPass/', forgotPass, name='forgotPass'),
+    path('error/', errorPage, name='error'),
+    path('addReport/', addReport, name='addReport'),
 ]
+
+# handler404 = 'reportMakerApp.views.handler404'
+# handler500 = 'reportMakerApp.views.handler500'

@@ -1,0 +1,21 @@
+{% extends './home.html' %}
+
+{% load static %}
+
+{% block head %}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'css/profile.css' %}">
+{% endblock head %}
+
+{% block title %}{{user.first_name}} {{user.last_name}} - Profile{% endblock title %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block card %}{% endblock card %}
+
+{% block script %}
+{{block.super}}
+<script src="{% static 'js/profile.js' %}"></script>
+{% endblock script %}

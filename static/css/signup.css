@@ -3,7 +3,6 @@ body {
     padding: 0;
     background: linear-gradient(40deg, #030529, #034d91);
     /* #e36b77, #5873de);*/
-    /*   */
     height: 98vh;
     font-family: system-ui;
 }
@@ -18,12 +17,6 @@ body {
     margin: 50px;
     height: 90vh;
     border-radius: 13px;
-}
-
-.align-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 #form-image {

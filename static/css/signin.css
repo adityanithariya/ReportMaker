@@ -19,12 +19,6 @@ body {
     border-radius: 13px;
 }
 
-.align-center {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 #form-image {
     margin-right: 130px;
 }

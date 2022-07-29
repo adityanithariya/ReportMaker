@@ -1,0 +1,82 @@
+{% extends './home.html' %}
+
+{% load static %}
+
+{% block head %}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'css/reports.css' %}">
+{% endblock head %}
+
+{% block title %}Reports{{block.super}}{% endblock title %}
+
+{% block card %}
+<div id="reports-div">
+    <div id="report-head">
+        <span class="report-title" id="title-head"> Report Title</span>
+        <span class="report-title">Owner</span>
+        <span class="report-title">Last Modified</span>
+    </div>
+    <div id="report-body">
+        {% for report in reportsData %}
+        <div class="report-data">
+            <span class="report-content title-content">{{report.report_title}}</span>
+            <span class="report-content sub-content align-center">{{report.reporter}}</span>
+            <span class="report-content sub-content align-center">{{report.created}}</span>
+        </div>
+        {% endfor %}
+    </div>
+    <div id="report-add" class="align-center">
+        <strong id="plus-sign">+</strong>
+        <span class="align-center" id="add-report-btn">Add New Report</span>
+    </div>
+</div>
+{% endblock card %}
+
+{% block aside %}
+<h2 class="align-center">Add Report</h2>
+<form action="{% url 'addReport' %}" method="post" id="report-form" class="align-center">
+    {% csrf_token %}
+    <div class="align-center form-title">
+        <label for="reportTitle" class="report-form-lbl">Report Title:</label>
+        <input type="text" name="title" class="form-input" id="reportTitle">
+    </div>
+    <div class="align-center form-title">
+        <label for="reportDesc" class="report-form-lbl">Report Description:</label>
+        <textarea name="desc" id="reportDesc" cols="30" rows="8"></textarea>
+    </div>
+    <div class="align-center form-title">
+        <label for="post-code" class="report-form-lbl">For Post:</label>
+        <fieldset class="checkbox-field">
+            <select name="postCode" class="checkbox">
+                <option value="None">- Select -</option>
+                {% for post in postCodes %}
+                <option value="{{post.0}}">{{post.1}}</option>
+                {% endfor %}
+            </select>
+        </fieldset>
+    </div>
+    <button id="submit-btn" type="submit">Submit</button>
+</form>
+{% endblock aside %}
+
+{% block addHtml %}
+<div id="confirm-box-cover" class="align-center">
+</div>
+<div id="confirm-box" class="align-center">
+    <div id="confirm-head">
+        <div id="confirm-query">
+            Are you sure you want to submit?
+        </div>
+        <div style="color: red;">You can't edit this report further</div>
+    </div>
+    <div id="btn-div" class="align-center">
+        <button>Yes</button>
+        <button>Cancel</button>
+    </div>
+</div>
+{% endblock addHtml %}
+
+{% block script %}
+{{ block.super }}
+<script src="{% static 'js/reports.js' %}"></script>
+{% endblock script %}

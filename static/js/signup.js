@@ -5,7 +5,7 @@ togglePasswordVids = document.getElementsByClassName("anime-passShow")
 role.onchange = function(event) {
     if (event.target.value == "member") {
         teamdiv.style.display = "block";
-        document.getElementById("team").placeholder = "Enter Designation Code";
+        document.getElementById("team").placeholder = "Enter Leader Username";
     } else if (event.target.value == "leader") {
         teamdiv.style.display = "block";
         document.getElementById("team").placeholder = "Enter Company Name";
@@ -32,6 +32,15 @@ for (let index = 0; index < inputPasswords.length; index++) {
         }
     };
 }
+
+// Check whether role is selected
+submitBtn = document.getElementById("submit-btn")
+
+function Submit(event) {
+    
+}
+
+submitBtn.onclick = Submit;
 
 // for (let index = 0; index < inputPasswords.length; index++) {
 //     togglePasswordImgs[index].onclick = function (event) {
