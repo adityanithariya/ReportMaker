@@ -11,7 +11,9 @@ function OpenNavBar() {
     if (window.matchMedia("(max-width:600px)").matches) {
         if (navBar.style.width != "150px") {
             navBar.style.width = "150px";
-            sideBar.style.setProperty('--side-bar-left', '144px');
+            try {
+                sideBar.style.setProperty('--side-bar-left', '144px');
+            } catch (error) {}
             profileMenu.style.left = "135px";
             profileDowArrow.style.left = "75px";
             profileDowArrow.style.top = "2px";
@@ -25,7 +27,9 @@ function OpenNavBar() {
         }
         else{
             navBar.style.width = "60px";
-            sideBar.style.setProperty('--side-bar-left', '54px');
+            try {
+                sideBar.style.setProperty('--side-bar-left', '54px');
+            } catch (error) {}
             profileDowArrow.style.left = "-7px";
             profileDowArrow.style.top = "0px";
             profileMenu.style.left = "50px";
@@ -59,7 +63,9 @@ function OpenNavBar() {
         
         if (navBar.style.width != "180px") {
             navBar.style.width = "180px";
-            sideBar.style.setProperty('--side-bar-left', '173.5px');
+            try {
+                sideBar.style.setProperty('--side-bar-left', '173.5px');
+            } catch (error) {}
             profileMenu.style.left = "160px";
             profileDowArrow.style.left = "90px";
             navCover.style.width = "100%";
@@ -72,7 +78,9 @@ function OpenNavBar() {
         }
         else{
             navBar.style.width = "75px";
-            sideBar.style.setProperty('--side-bar-left', '68.5px');
+            try {
+                sideBar.style.setProperty('--side-bar-left', '68.5px');
+            } catch (error) {}
             profileMenu.style.left = "65px";
             profileDowArrow.style.left = "-7px";
             navMenu.style.display = "none";

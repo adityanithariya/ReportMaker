@@ -1,0 +1,57 @@
+{% extends './home.html' %}
+
+{% load static %}
+{% load custom_tags %}
+
+{% block head %}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'css/report.css' %}">
+{% endblock head %}
+
+{% block title %}{{reportData.report_title}} - {% with reportData.reporter|split:" - " as i %}{{i.0}}{% endwith %}{% endblock title %}
+
+{% block header %}
+<div class="head align-center">
+    <a href="#" id="back-btn-href" onclick="javascript:window.history.back(-1);return false;">
+        <lord-icon
+            id="back-btn"
+            src="https://cdn.lordicon.com/iifryyua.json"
+            trigger="hover"
+            colors="primary:#121331"
+            scale="40"
+            state="hover-3"
+            style="width:35px;height:35px">
+        </lord-icon>
+    </a>
+    <span id="head-desc">Report Description</span>
+</div>
+<div id="report-detail">
+    <div class="report-content-div">
+        <span class="info-tag">Report Title: </span>
+        <span>{{reportData.report_title}}</span>
+    </div>
+    <div class="report-content-div">
+        <span class="info-tag">Report Description: </span>
+        <span>{{reportData.report_desc}}</span>
+    </div>
+    <div class="report-content-div">
+        <span class="info-tag">Report By: </span>
+        <span>{% with reportData.reporter|split:" - " as i %}{{i.0}}{% endwith %}</span>
+    </div>
+    <div class="report-content-div">
+        <span class="info-tag">For Post: </span>
+        <span>{% with reportData.post_code|split:" - " as i %}{{i.0}}{% endwith %}</span>
+    </div>
+    <div class="report-content-div">
+        <span class="info-tag">Posted At: </span>
+        <span>{{reportData.created|get_whole_time}}</span>
+    </div>
+</div>
+{% endblock header %}
+
+{% block card %}{% endblock card %}
+
+{% block script %}
+{{block.super}}
+{% comment %} <script src="{% static 'js/report.js' %}"></script> {% endcomment %}
+{% endblock script %}

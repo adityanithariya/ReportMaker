@@ -15,6 +15,7 @@ urlpatterns = [
     path('forgotPass/', forgotPass, name='forgotPass'),
     path('error/', errorPage, name='error'),
     path('addReport/', addReport, name='addReport'),
+    path('report/', report, name='report')
 ]
 
 # handler404 = 'reportMakerApp.views.handler404'

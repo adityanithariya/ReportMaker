@@ -95,11 +95,11 @@
         {% block aside %}
         <h2 class="align-center">Recent Reports</h2>
         {% for report in reportsData %}
-        <div class="report-div align-center">
+        <a href="{% url 'report' %}?report={{report.id}}" class="report-div align-center">
             <div class="report-header align-center">
                 <div>
                     <span class="report-bullet"></span>
-                    <span class="report-title">{{report.report_title}}</span>
+                    <span class="report-title">{{report.report_title|truncatechars:20}}</span>
                 </div>
                 <div class="report-time">
                     {% load custom_tags %}
@@ -112,7 +112,7 @@
                 <div class="reporter-name">{% with report.reporter|split:" - " as reporterName %}{{reporterName.0}}{% endwith %}</div>
                 <div class="reporter-design">{% with report.post_code|split:" - " as designation %}{{designation.0}}{% endwith %}</div>
             </div>
-        </div>
+        </a>
         {% endfor %}
         {% endblock aside %}
     </aside>

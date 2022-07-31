@@ -1,4 +1,4 @@
-from django.shortcuts import redirect, render, HttpResponse, Http404
+from django.shortcuts import redirect, render, HttpResponse
 from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -153,20 +153,40 @@ def reports(req):
         return render(req, "reports.html", context=context)
 
 def settings(req):
-    
-    context = {
-        "settings":"on",
-        "reportsData":getReportsData(req)
-    }
-    return render(req, "settings.html", context=context)
+    if (req.user.is_authenticated == False):
+        return redirect('login')
+    if req.method == "GET":
+        context = {
+            "settings":"on",
+            "reportsData":getReportsData(req)
+        }
+        return render(req, "settings.html", context=context)
 
 def profile(req):
+    if (req.user.is_authenticated == False):
+        return redirect('login')
     if req.method == "GET":
-        
         context = {
             "reportsData":getReportsData(req)
         }
         return render(req, "profile.html", context=context)
+
+def report(req):
+    if (req.user.is_authenticated == False):
+        return redirect('login')
+    if req.method == "GET":
+        reportId = req.GET.get('report')
+        try:
+            reportData = Report.objects.get(id=reportId)
+        except:
+            return redirect('reports')
+        if reportData.reporter.get_leader_user() != req.user.get_leader_user():
+            return redirect('reports')
+        context = {
+            "reportsData":getReportsData(req),
+            "reportData":reportData,
+        }
+        return render(req, "report.html", context=context)
 
 def forgotPass(req):
     return HttpResponse("Fogot Password, Go to hell!!!")

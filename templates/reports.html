@@ -1,13 +1,14 @@
 {% extends './home.html' %}
 
 {% load static %}
+{% load custom_tags %}
 
 {% block head %}
 {{block.super}}
 <link rel="stylesheet" href="{% static 'css/reports.css' %}">
 {% endblock head %}
 
-{% block title %}Reports{{block.super}}{% endblock title %}
+{% block title %}Reports - Report Maker{% endblock title %}
 
 {% block card %}
 <div id="reports-div">
@@ -18,11 +19,11 @@
     </div>
     <div id="report-body">
         {% for report in reportsData %}
-        <div class="report-data">
+        <a class="report-data" href="{% url 'report' %}?report={{report.id}}">
             <span class="report-content title-content">{{report.report_title}}</span>
-            <span class="report-content sub-content align-center">{{report.reporter}}</span>
-            <span class="report-content sub-content align-center">{{report.created}}</span>
-        </div>
+            <span class="report-content sub-content align-center">{% with report.reporter|split:" - " as i %}{{i.0}}{% endwith %}</span>
+            <span class="report-content sub-content align-center">{% with report.created|get_whole_time as i %}{{i}}{% endwith %}</span>
+        </a>
         {% endfor %}
     </div>
     <div id="report-add" class="align-center">

@@ -32,7 +32,7 @@
                 <h1 id="teamname">{{user.member.leader.team_name}}</h1>
                 {% endif %}
             </span>
-            <span id="right-head" class="align-center">
+            {% comment %} <span id="right-head" class="align-center">
                 <div id="search-div">
                     <label for="search-input" id="search-lbl">
                         <video id="search-vid" src="{% static 'images/home/search.mp4' %}" alt="Search"></video>
@@ -48,20 +48,36 @@
                         colors="primary:#121331"
                         style="width:32px;height:32px">
                     </lord-icon>
-                </div>
+                </div> {% endcomment %}
             </span>
         </div>
         {% endblock header %}
         {% block card %}
         <div id="cards">
-        {% for post in posts %}
+        {% if posts.count == 0 %}
+            {% if user.leader %}
+                <a href="{% url 'profile' %}?addPost=True" class="design-container align-center">
+                    <lord-icon
+                        target="a.design-container"
+                        src="https://cdn.lordicon.com/zgogqkqu.json"
+                        trigger="hover"
+                        colors="primary:#15aaff,secondary:#adf7f2"
+                        stroke="70"
+                        style="width:55px;height:60px">
+                    </lord-icon>
+                    <span style="padding-right: 10px;">Add New Post</span>
+                </a>
+            {% endif %}
+        {% else %}
+            {% for post in posts %}
             <a href="{% url 'reports' %}?post={{post.0}}" class="design-container">
                 <span class="side-bar"></span>
                 <div class="designations">{{post.1}}</div>
                 <div class="last-report">{{post.4}}</div>
                 <div class="ongoing-work">{{post.3}}</div>
             </a>
-        {% endfor %}
+            {% endfor %}
+        {% endif %}
         </div>
         {% endblock card %}
     </section>

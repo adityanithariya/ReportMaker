@@ -30,3 +30,13 @@ reportForm.addEventListener("submit", function(evt) {
 
 cancelBtn.onclick = hideConfirmBox;
 confirmCover.onclick = hideConfirmBox;
+
+// Overflow Change
+let reportBody = document.getElementById("report-body")
+if (reportBody.scrollHeight > reportBody.clientHeight){
+    let reportData = document.getElementsByClassName("report-data")
+    for (let index = 0; index < reportData.length; index++) {
+        const element = reportData[index];
+        element.style.gridTemplateColumns = "2.18fr 1.18fr .83fr";
+    }
+}

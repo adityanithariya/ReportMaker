@@ -312,6 +312,8 @@ aside{
 }
 
 .report-div{
+    color: black;
+    text-decoration: none;
     flex-direction: column;
     margin: 15px;
 }

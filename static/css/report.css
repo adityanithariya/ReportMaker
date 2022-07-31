@@ -1,0 +1,47 @@
+.head{
+    width: fit-content;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+#back-btn-href{
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+}
+
+#head-desc{
+    font-size: 22px;
+    font-weight: 1000;
+    margin-left: 10px;
+}
+
+#back-btn{
+    transform: rotate(180deg);
+}
+
+#report-detail{
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-size: 17px;
+    text-align: justify;
+    background-color: white;
+    border-radius: 25px;
+    padding-bottom: 10px;
+    box-shadow: 0 0 8px 0px rgb(0 0 0 / 30%);
+    overflow-y: auto;
+    max-height: 82vh;
+}
+
+.report-content-div{
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+
+.info-tag{
+    font-size: 18px;
+    font-weight: 1000;
+}

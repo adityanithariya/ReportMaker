@@ -10,7 +10,27 @@
 {% block title %}{{user.first_name}} {{user.last_name}} - Profile{% endblock title %}
 
 {% block header %}
-
+<div class="profile">
+    <div class="profile-img">
+        <img src="{% static 'images/profile/profile.jpg' %}" alt="img">
+    </div>
+    <form action="#" method="POST" class="align-center" id="profile-form">
+        <div class="align-center">
+            <div class="align-center" id="username-div">
+                <input type="text" id="username" readonly value="{{user.first_name}} {{user.last_name}}">
+                <span id="username-baseline"></span>
+            </div>
+            <lord-icon
+                id="user-edit"
+                class="edit-icon"
+                src="https://cdn.lordicon.com/wloilxuq.json"
+                trigger="hover"
+                colors="primary:#121331,secondary:#30c9e8"
+                style="width:50px;height:50px">
+            </lord-icon>
+        </div>
+    </form>
+</div>
 {% endblock header %}
 
 {% block card %}{% endblock card %}
