@@ -6,7 +6,7 @@ from django.contrib.auth.models import User
     # list_display = ['username', 'email', ]
 
 class TeamCodeAdmin(admin.ModelAdmin):
-    list_display = ['postCode', 'postName', 'user_created', 'id']
+    list_display = ['postCode', 'postName', 'user_created']
 
 class LeaderAdmin(admin.ModelAdmin):
     list_display = ['user', 'team_name', 'college_id', 'id']

@@ -54,7 +54,7 @@
         {% endblock header %}
         {% block card %}
         <div id="cards">
-        {% if posts.count == 0 %}
+        {% if posts|length == 0 %}
             {% if user.leader %}
                 <a href="{% url 'profile' %}?addPost=True" class="design-container align-center">
                     <lord-icon
@@ -65,7 +65,6 @@
                         stroke="70"
                         style="width:55px;height:60px">
                     </lord-icon>
-                    <span style="padding-right: 10px;">Add New Post</span>
                 </a>
             {% endif %}
         {% else %}

@@ -20,3 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('reportMakerApp.urls'))
 ]
+
+from ReportMaker.settings import DEBUG
+if DEBUG:
+    urlpatterns.append(path('__debug__/', include('debug_toolbar.urls')))

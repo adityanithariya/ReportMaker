@@ -11,7 +11,7 @@ from .models import Leader, Member, Report, TeamCode
 # Utilities
 def log(message):
     with open("error.log", "a") as f:
-        f.write(str(message))
+        f.write(str(message) + "\n")
 
 def getReportsData(req):
     team_name = req.user.get_team_name()
@@ -142,12 +142,19 @@ def reports(req):
             if req.user.get_leader_user() != TeamCode.objects.get(postCode=post).user_created:
                 context["reportsData"] = getReportsData(req)
                 context["postCodes"] = list(req.user.get_teamCodes().values_list('postCode', 'postName'))
+                print("a")
             else:
                 context["reportsData"] = Report.get_by_team_name(team_name, Report.objects.filter(post_code=TeamCode.objects.get(postCode=post)))
-                context["postCodes"] = list(req.user.get_teamCodes().values_list('postCode', 'postName'))
+                posts = []
+                for i in list(req.user.get_teamCodes().values_list('postCode', 'postName')):
+                    if i[0] == post:
+                        i = list(i)
+                        i.append('selected')
+                    posts.append(i)
+                context["postCodes"] = posts
         except Exception as e:
             log(e)
-            
+            print("Exception")
             context["reportsData"] = getReportsData(req)
             context["postCodes"] = list(req.user.get_teamCodes().values_list('postCode', 'postName'))
         return render(req, "reports.html", context=context)
@@ -175,7 +182,7 @@ def report(req):
     if (req.user.is_authenticated == False):
         return redirect('login')
     if req.method == "GET":
-        reportId = req.GET.get('report')
+        reportId = req.GET.get('id')
         try:
             reportData = Report.objects.get(id=reportId)
         except:

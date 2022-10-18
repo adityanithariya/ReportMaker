@@ -1,18 +1,18 @@
 // Search-Btn Animation
-let searchInput = document.getElementById("search-input");
-let search = document.getElementById("search-vid");
+// let searchInput = document.getElementById("search-input");
+// let search = document.getElementById("search-vid");
 
-searchInput.addEventListener("focusin", function (event) {
-    search.play();
-})
+// searchInput.addEventListener("focusin", function (event) {
+//     search.play();
+// })
 
 // Notification Icon Animation
-let notifVid = document.getElementById("notif-vid");
-let notifDiv = document.getElementById("notif-div");
+// let notifVid = document.getElementById("notif-vid");
+// let notifDiv = document.getElementById("notif-div");
 
-notifDiv.onmouseenter = function (event) {
-    notifVid.play()
-}
+// notifDiv.onmouseenter = function (event) {
+//     notifVid.play()
+// }
 
 // Notification Bar Animation
 let notifBar = document.getElementById("notif-bar");

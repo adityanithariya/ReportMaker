@@ -95,7 +95,7 @@
         {% block aside %}
         <h2 class="align-center">Recent Reports</h2>
         {% for report in reportsData %}
-        <a href="{% url 'report' %}?report={{report.id}}" class="report-div align-center">
+        <a href="{% url 'report' %}?id={{report.id}}" class="report-div align-center">
             <div class="report-header align-center">
                 <div>
                     <span class="report-bullet"></span>
