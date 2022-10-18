@@ -1,0 +1,75 @@
+.gitignore
+db.sqlite3
+manage.py
+requirements.txt
+ReportMaker/
+  |--asgi.py
+  |--settings.py
+  |--urls.py
+  |--wsgi.py
+  |--__init__.py
+reportMakerApp/
+  |--__init__.py
+  |--admin.py
+  |--apps.py
+  |--models.py
+  |--tests.py
+  |--urls.py
+  |--views.py
+  templatetags/
+   |--__init__.py
+   |--custom_tags.py
+static/
+  css/
+   |--base.css
+   |--home.css
+   |--profile.css
+   |--report.css
+   |--reports.css
+   |--signin.css
+   |--signup.css
+   |--utility.css
+  images/
+   |-home/
+     |--clogo.svg
+     |--dropdown-caret.png
+     |--logo.png
+     |--notif.mp4
+     |--notif.png
+     |--search.mp4
+     |--search.png
+     |--user.jpg
+     |--User.mp4
+   |-profile/
+     |--profile.jpg
+   |-sign/
+     |--decoration-img.jpg
+     |--email.gif
+     |--eye-close.JPG
+     |--eye-open.JPG
+     |--hide-show.mp4
+     |--hide.mp4
+     |--name.gif
+     |--password.gif
+     |--right-arrow.gif
+     |--show.mp4
+     |--team.gif
+     |--template.jpg
+  js/
+   |--base.js
+   |--home.js
+   |--profile.js
+   |--reports.js
+   |--signin.js
+   |--signup.js
+templates/
+  |--404.html
+  |--500.html
+  |--base.html
+  |--home.html
+  |--login.html
+  |--profile.html
+  |--report.html
+  |--reports.html
+  |--settings.html
+  |--signup.html
