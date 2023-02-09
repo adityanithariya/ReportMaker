@@ -25,3 +25,7 @@ admin.site.register(Leader, LeaderAdmin)
 admin.site.register(Member, MemberAdmin)
 admin.site.register(Report, ReportAdmin)
 admin.site.register(TeamCode, TeamCodeAdmin)
+
+admin.site.site_header = "Report Maker Admin"
+admin.site.site_title = "Report Maker Admin Portal"
+admin.site.index_title = "Welcome to Report Maker Admin Portal"

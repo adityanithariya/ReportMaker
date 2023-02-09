@@ -3,7 +3,8 @@ let baseline = document.getElementById("username-baseline")
 let usernameInput = document.getElementById("username")
 
 usernameInput.addEventListener('input', function (event) {
-    baseline.innerHTML = " " + usernameInput.value + " ";
+    let val = usernameInput.value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/"/g, '&quot;');
+    baseline.textContent = " " + val + " ";
     usernameInput.style.width = (baseline.offsetWidth - 5) + "px";
 })
 
